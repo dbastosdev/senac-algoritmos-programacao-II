@@ -40,17 +40,22 @@ public class InsertionSort {
 		for(int i = 1; i < vetor.length; i++) {
 			// Variável auxiliar que guarda o elemento selecionado a partir do índice 1 até o índice length - 1.
 			// Esse elemento será inserido na sua posição correta, do menor para o maior ao longo do vetor
-			int ValorSelecionado = vetor[i];
+			int valorSelecionado = vetor[i];
 		
 		    // laço interno para comparação de cada um dos elementos à esquerda do elemento selecionado. 
 			// A comparação é feita do índice mais a direita até o mais a esquerda. ex. indice 5 com o 4, 5 com o 3 ...
-			// Se o vetor j, ou seja à esquerda do valor selecionado for maior que o elemento selecionado, ocorre a troca. 
+			// Se o vetor j, ou seja, à esquerda do valor selecionado for maior que o elemento selecionado, ocorre a troca. 
 			// Note que o valor posicional do ValorSelecionado vai decrescendo juntamente com o valor em caso de troca. 
-			for(int j = i - 1; j >= 0 && vetor[j] > ValorSelecionado; j--) {
+			for(int j = i - 1; j >= 0; j--) {
 				
-				// Realiza a troca
-				vetor[j + 1] = vetor[j];
-				vetor[j] = ValorSelecionado;
+				if(valorSelecionado < vetor[j]) {
+					// Realiza a troca
+					// A troca ocorre sempre com elementos do vetor baseados no índice j. Pois é esse o índice variável nesse laço.
+					vetor[j + 1] = vetor[j];
+					vetor[j] = valorSelecionado;
+				}
+				
+				
 			}
 			
 		}
