@@ -3,6 +3,11 @@
  * devido a possibilidade de gerar sobrecarga nos ponteiros de memória. 
  * 
  * A lista que será buscada deverá estar ordenada para o correto funcionamento do algoritmo.
+ * 
+ * Utiliza-se uma tabela auxiliar, chamada de índice para que o processo de busca seja otimizado. Esse índice contém um valor e seu índice no vetor de busca. 
+ * Compara-se o valor buscado com os valores já conhecidos da tabela de índices. Assim, consegue-se delimitar o campo de busca de dados dentro da lista ou vetor pesquisado. 
+ * 
+ * 
  * */
 
 
@@ -17,7 +22,7 @@ public class BuscaIndexada {
 		int[] vetor = {5, 8, 12, 18, 23, 27, 31, 35, 38, 42, 46, 49, 51, 55, 62};
 		
 		// Tabela de indíces previamente conhecidos
-		int[] tabelaIndex = {31,6}; // Elemento 31 no índice 6
+		int[] tabelaIndex = {31,6}; // Elemento 31 no índice 6 do vetor original a ser pesquisado 
 		
 		// Valor buscado
 		int numeroBuscado = 12;

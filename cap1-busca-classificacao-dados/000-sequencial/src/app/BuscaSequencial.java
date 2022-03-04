@@ -1,3 +1,22 @@
+/*
+ * Para realizar o processo de busca é necessário um conjunto de dados que geralmente são estruturados como um vetor (pode-se usar também uma lista ligada). 
+ * Um vetor possui objetos classificados em índices de 0 a n-1, em que n é o tamanho do vetor.
+ * 
+ * Vetores são ótimos para serem percorridos e consultados. Listas ligadas são ótimos para adição e deleção de itens. O vetor possui tamanho rígido a lista ligada não, pois tem seu 
+ * tamanho fragmentado na memória. Há a necessidade de percorrer todos os elementos dessa última para acesso a um determinado elemento. 
+ * 
+ * Vetores e listas são exemplos de TAD (Tipo abstrato de dado).
+ * 
+ * A busca linear ou sequencial é intuitiva. É realizada a comparação de cada valor do vetor com o número buscado. As condições de parada são as seguintes: 
+ *  
+ * 1. Encontrou o elemento procurado, e retorna a posição do vetor desse elemento;
+ * 2. Não encontrou o elemento procurado e retornou um índice fora do array, geralemente o -1. 
+ *  
+ * 
+ *  
+ * 
+ */
+
 package app;
 
 public class BuscaSequencial {
@@ -44,7 +63,7 @@ public class BuscaSequencial {
 				return i;
 			}
 		}
-		
+		// Se passar por todos elementos e não retornar o índice, cai aqui e saí do método. 
 		return -1;
 	}
 	

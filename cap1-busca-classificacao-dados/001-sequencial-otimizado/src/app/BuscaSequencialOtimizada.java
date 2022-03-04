@@ -1,4 +1,12 @@
 /*
+ * Uma das mais fáceis maneiras de otimizar a busca é fazer a aplicação dar um "salto" com o valor buscado que é encontrado para uma casa a frente. Dessa forma, o valor buscado
+ * sempre ganhará prioridade na ordem de busca dentro do vetor. Reduzindo assim o tempo de busca. 
+ * 
+ * Um outro método empregado e mais eficiênte é trabalhar com o vetor ordenado. Assim, podemos parar a busca ao verificar que o número buscado é inferior ao número que está sendo avaliado
+ * atualmente e que corresponde a uma das posições do vetor. Veja, um vetor com n elementos possui em média n operações para encontrar um valor. Um vetor ordenado possui n/2 operações 
+ * para realizar a mesma tarefa. 
+ * 
+ *  
  * Esse programa conta com atualização na entrada de dados para popular o vetor de busca
  * e além disso, atualização do metodo de busca para otimizar a busca sequêncial. 
  * 
@@ -29,11 +37,12 @@ public class BuscaSequencialOtimizada {
 		// Instanciando o vetor
 		System.out.println("Digite a quantidade de itens do vetor:");
 		int n = sc.nextInt();
-		vetor = new int[n];
+		vetor = new int[n]; // instancia um vetor com n posições declaradas pelo usuário
 		
 		System.out.println();
 		
 		// Populando o vetor:
+		// percorre cada uma das posições e insere um valor.
 		for(int i = 0; i < n; i++) {
 			System.out.printf("Digite o valor do índice vetor[%d]: ", i);
 			vetor[i] = sc.nextInt();

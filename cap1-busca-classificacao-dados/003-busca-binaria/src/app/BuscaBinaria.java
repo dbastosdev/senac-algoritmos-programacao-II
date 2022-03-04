@@ -4,6 +4,12 @@
  * dois subvetores. A subdivisão deve ser baseada no ponto central dos dados, de forma eliminar o maior
  * número de ocorrências possíveis. A busca binária é O(log n). Conforme a quantidade de elementos aumenta
  * maior é a eficiência desse algoritmo quando comparado a busca sequencial. 
+ * 
+ * A busca binária é a mais rápida entre as buscas. A partir do vetor ordenado, a busca binária subdivide o vetor original em subvetores menores descartando um subvetor quando esse
+ * está fora do intervalo dos valores buscados. A solução ótima é baseada na divisão na metade do conjunto de dados. Essa estratégia reduz a complexidade da busca de n, quando 
+ * são realizados n passos igual ao tamanho do vetor para encontrar o valor buscado para log n. Conforme o conjunto de dados aumenta, mais otimizada é a busca binária. 
+ * 
+ * 
  */
 
 package app;
@@ -45,12 +51,12 @@ public class BuscaBinaria {
 			// Checa se o valor procurado é igual ao valor do meio do vetor. Caso não seja, decarta metade 
 			// do vetor e atualiza os índices de início ou fim do vetor e repete o processo. Caso seja, 
 			// retorna o valor da posicao do meio no índice. 
-			if(vetor[posicaoDoMeio] < valorProcurado ) {
+			if(vetor[posicaoDoMeio] < valorProcurado ) {       // atualiza a posição inicial se o valor procurado for maior
 				posicaoInicial = posicaoDoMeio + 1;
-			} else if(vetor[posicaoDoMeio] > valorProcurado) {
+			} else if(vetor[posicaoDoMeio] > valorProcurado) { // atualiza a posição final se o valor procurado for menor
 				posicaoFinal = posicaoDoMeio - 1;
 			} else {
-				return posicaoDoMeio;
+				return posicaoDoMeio; 						   // retorna a posição do meio pois é igual ao valor buscado
 			}
 			
 			// Com log n, para 8 valores, temos no máximo 3 voltas. 
